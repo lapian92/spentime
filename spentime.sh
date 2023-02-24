@@ -47,13 +47,10 @@ do
         # espero el intervalo menos 3 segundos para los pitidos
         sleep $(($INTERVAL - 3))
 
-        # hago sonar un pitido por segundo, 3 veces
-        printf '\7'
-        sleep 1
-        printf '\7'
-        sleep 1
-        printf '\7'
-        sleep 1
+        # hago subir y bajar el brillo para que aparezca el cartel y sepas que te esta por preguntar
+        xdotool key XF86AudioRaiseVolume;
+        xdotool key XF86AudioLowerVolume;
+        sleep 3;
         clear
 
         # almaceno la ventana activa antes de levantar el prompt
